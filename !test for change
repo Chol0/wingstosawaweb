@@ -13,8 +13,10 @@
             margin: 0;
             padding: 0;
             color: #333;
+            scroll-behavior: smooth; /* For smooth scrolling to anchors */
         }
 
+        /* Loading Screen Styles */
         #loading-screen {
             position: fixed;
             top: 0;
@@ -130,9 +132,9 @@
 </head>
 <body>
 
+    <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="loader">
-            <img src="logo.png" alt="Wings To Sawa Logo"> <!-- Assuming you have a logo image; replace with actual path -->
             <p>Loading...</p>
         </div>
     </div>
@@ -141,7 +143,7 @@
         <div class="logo">Wings To Sawa</div>
         <nav>
             <a href="index.html#home">Home</a>
-            <a href="about.html">About</a>
+            <a href="index.html#about">About Us</a>
             <a href="menu.html">Menu</a>
             <a href="contact.html">Contact</a>
         </nav>
