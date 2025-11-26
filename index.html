@@ -1,113 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Wings To Sawa</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #e63946, #111);
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .container {
-            background: #fff;
-            width: 350px;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            animation: pop 0.5s ease;
-        }
-        @keyframes pop {
-            from { transform: scale(0.8); }
-            to { transform: scale(1); }
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border: 1px solid #888;
-            font-size: 16px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            background: #e63946;
-            color: white;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        .error {
-            color: red;
-            margin-top: 10px;
-            text-align: center;
-        }
-        .success {
-            color: green;
-            margin-top: 10px;
-            text-align: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unli Wings | Sign In & Sign Up</title>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f28705;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        width: 380px;
+        background: linear-gradient(145deg, #f2f0e4, #ffffff);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        color: #000000;
+    }
+    h2 { text-align: center; margin-bottom: 30px; font-weight: bold; }
+    input {
+        width: 100%;
+        padding: 14px 16px;
+        margin: 12px 0;
+        background: #f2f0e4;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        font-size: 15px;
+    }
+    input:focus {
+        outline: none;
+        border: 2px solid #f28705;
+        box-shadow: 0 0 8px rgba(242,135,5,0.3);
+    }
+    button {
+        width: 100%; padding: 14px; margin-top: 15px;
+        background-color: #f25c05; border: none;
+        border-radius: 12px; font-size: 16px; font-weight: bold;
+        color: #f2f0e4; cursor: pointer;
+    }
+    .toggle { text-align: center; margin-top: 18px; }
+    .toggle a { color: #f28705; font-weight: bold; cursor: pointer; }
+    #errorMsg { color: red; text-align: center; margin-top: 10px; }
+</style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Enter Account</h2>
-    <input type="text" id="username" placeholder="Enter Username">
-    <input type="password" id="password" placeholder="Enter Password">
-    <button onclick="signup()">Sign Up</button>
-    <p id="message"></p>
+
+    <div id="signInForm">
+        <h2>Sign In</h2>
+        <input type="text" id="loginUser" placeholder="Username" required>
+        <input type="password" id="loginPass" placeholder="Password" required>
+        <button onclick="signIn()">Sign In</button>
+        <p id="errorMsg"></p>
+        <p class="toggle">Don't have an account? <a onclick="toggleForms()">Sign Up</a></p>
+    </div>
+
+    <div id="signUpForm" style="display: none;">
+        <h2>Create Account</h2>
+        <input type="text" id="newUser" placeholder="Username" required>
+        <input type="password" id="newPass" placeholder="Password" required>
+        <input type="password" id="newPass2" placeholder="Confirm Password" required>
+        <button onclick="signUp()">Sign Up</button>
+        <p id="errorMsg"></p>
+        <p class="toggle">Already have an account? <a onclick="toggleForms()">Sign In</a></p>
+    </div>
+
 </div>
 
 <script>
-    // DEMO FIXED ACCOUNT (since no database)
-    const demoUser = "demo";
-    const demoPass = "1234";
+// Demo stored login (no database)
+let demoUser = "admin";
+let demoPass = "1234";
 
-    function signup() {
-        let user = document.getElementById("username").value;
-        let pass = document.getElementById("password").value;
-        let msg = document.getElementById("message");
+function toggleForms() {
+    document.getElementById("signInForm").style.display =
+        document.getElementById("signInForm").style.display === "none" ? "block" : "none";
+    document.getElementById("signUpForm").style.display =
+        document.getElementById("signUpForm").style.display === "none" ? "block" : "none";
+}
 
-        if (user === demoUser) {
-            msg.className = "error";
-            msg.textContent = "Username already exists (demo mode)";
-            return;
-        }
+function signIn() {
+    let u = document.getElementById("loginUser").value;
+    let p = document.getElementById("loginPass").value;
+    let msg = document.getElementById("errorMsg");
 
-        if (user === "" || pass === "") {
-            msg.className = "error";
-            msg.textContent = "Please fill out all fields.";
-            return;
-        }
-
-        // Accept any non-demo username
-        msg.className = "success";
-        msg.textContent = "Account Created! Redirecting...";
-            setTimeout(() => {
-                window.location.href = 'Unli Wing.html';
-            }, 1500);
+    if (u === demoUser && p === demoPass) {
+        window.location.href = 'Unli Wing.html';
+    } else {
+        msg.textContent = "Incorrect username or password";
     }
+}
+
+function signUp() {
+    let u = document.getElementById("newUser").value;
+    let p1 = document.getElementById("newPass").value;
+    let p2 = document.getElementById("newPass2").value;
+    let msg = document.getElementById("errorMsg");
+
+    if (u === "" || p1 === "" || p2 === "") {
+        msg.textContent = "All fields required";
+        return;
+    }
+    if (p1 !== p2) {
+        msg.textContent = "Passwords do not match";
+        return;
+    }
+
+    demoUser = u;
+    demoPass = p1;
+    msg.style.color = "green";
+    msg.textContent = "Account created! You can now sign in.";
+    toggleForms();
+}
 </script>
 
 </body>
