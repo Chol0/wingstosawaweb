@@ -1145,182 +1145,126 @@
 
 
 <script>
-    // --- STATE & UTILITY ---
-    let cart = []; // Cart data structure
-    
-    // Check if user is logged in persistently using localStorage
-    function requireLogin() {
-        // Use a consistent key and check
-        const loggedInStatus = localStorage.getItem("loggedIn");
-        
-        if (loggedInStatus !== "true") {
-            alert("Please sign in before ordering.");
-            // Navigate to the sign-in page (adjust 'login.html' if necessary)
-            window.location.href = "login.html"; 
-            return false;
-        }
-        return true;
+
+let cart = [];
+
+// ---------------------------------------------
+// LOGIN CHECK (NO REDIRECT — MODAL ONLY)
+// ---------------------------------------------
+function requireLogin() {
+    const loggedIn = localStorage.getItem("loggedIn");
+
+    if (loggedIn !== "true") {
+        openLogin();
+        return false;
     }
+    return true;
+}
 
-    // Update cart display/count (Requires an element with class .cart-count in HTML)
-    function updateCart() {
-        const cartCount = document.querySelector(".cart-count");
-        if (cartCount) {
-            cartCount.textContent = cart.reduce((total, item) => total + item.qty, 0); // Count total items, not just unique types
-        }
-        console.log("Cart items:", cart);
-        // Optional: Implement function to show the actual cart modal content here
-    }
+// ---------------------------------------------
+// UPDATE CART COUNT
+// ---------------------------------------------
+function updateCart() {
+    const cartCount = document.querySelector(".cart-count");
+    if (!cartCount) return;
 
-    // --- INITIALIZATION & DOM LOAD ---
-    document.addEventListener("DOMContentLoaded", () => {
-        // 1. Initial Cart/Login state
-        const loggedIn = localStorage.getItem("loggedIn") === "true";
-        updateCart(); // Initialize cart count on load
-        
-        // 2. Control Add-to-Cart Buttons based on login status
-        document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
-            if (!loggedIn) {
-                // Initial disabled state for non-logged-in users
-                btn.disabled = true;
-                btn.style.opacity = "0.5";
-                btn.style.cursor = "not-allowed";
-                
-                // Add click handler to prompt login if disabled
-                btn.addEventListener("click", () => {
-                    openLogin(); // Opens the modal if not logged in
-                });
-            } else {
-                 // The main cart logic relies on the event listener below
-                 // No need to manually enable/style here if the user is already logged in
-            }
-        });
-        
-        // 3. Attach Add to Cart listener (This runs after the above, if the user is logged in)
-        document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
-            btn.addEventListener("click", function() {
-                // Check login first. If successful, proceed.
-                // If not logged in, requireLogin() will handle the navigation/alert.
-                if (!requireLogin()) return; 
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+}
 
-                const itemName = this.dataset.name;
-                // Ensure itemPrice is retrieved as a number, defaulting to 0 if not set
-                const itemPrice = parseFloat(this.dataset.price) || 0; 
 
-                const existing = cart.find(i => i.name === itemName);
-                if (existing) existing.qty++;
-                else cart.push({ name: itemName, price: itemPrice, qty: 1 });
+// ---------------------------------------------
+// PAGE LOAD
+// ---------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const loggedIn = localStorage.getItem("loggedIn") === "true";
+    const buttons = document.querySelectorAll(".add-to-cart-btn");
 
-                alert(itemName + " added to cart!");
-                updateCart();
-            });
-        });
-    });
-
-    // --- USER INTERACTION (Smooth Scroll, Forms) ---
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Reservation Form Handler (Needs to be attached to the form's submit event in HTML)
-    function handleSubmit(event) {
-        event.preventDefault();
-        alert('Thank you for your reservation request! We will contact you shortly!');
-        event.target.reset();
-    }
-
-    // Checkout
-    function checkout() {
-        if (!requireLogin()) return; // Require login before checkout
-        if (cart.length === 0) {
-            alert("Your cart is empty!");
-            return;
-        }
-        alert("Your order has been submitted! Thank you!");
-        cart = [];
-        updateCart();
-    }
-
-    // --- ANIMATION ---
-
-    // Fade-in animation
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                // Optional: Stop observing after first intersection
-                // observer.unobserve(entry.target); 
-            }
-        });
-    });
-
-    // Apply initial animation styles and observe
-    document.querySelectorAll('.feature-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = '0.6s';
-        observer.observe(card);
-    });
-    
-    // --- LOGIN MODAL & AUTHENTICATION ---
-    
-    // Functions to open/close the login modal
-    function openLogin() {
-        const modal = document.getElementById("loginModal");
-        if (modal) modal.style.display = "flex";
-        // Ensure buttons are disabled if the user cancels login
-        document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
+    // Disable buttons if not logged in
+    if (!loggedIn) {
+        buttons.forEach(btn => {
             btn.disabled = true;
             btn.style.opacity = "0.5";
             btn.style.cursor = "not-allowed";
+
+            btn.addEventListener("click", () => openLogin());
         });
     }
 
-    function closeLogin() {
-        const modal = document.getElementById("loginModal");
-        if (modal) modal.style.display = "none";
-    }
+    // Add-to-cart logic (works only if logged in)
+    buttons.forEach(btn => {
+        btn.addEventListener("click", function () {
+            if (!requireLogin()) return;
 
-    function login() {
-        let user = document.getElementById("username").value;
-        let pass = document.getElementById("password").value;
+            const itemName = this.dataset.name;
+            const itemPrice = parseFloat(this.dataset.price) || 0;
 
-        if (user === "" || pass === "") {
-            alert("Please enter both username and password.");
-            return;
-        }
+            const existing = cart.find(item => item.name === itemName);
 
-        // --- AUTHENTICATION LOGIC ---
-        // For a real app, this would be an API call.
-        // For this demo, we assume success.
-        
-        // 1. Set persistent state
-        localStorage.setItem("loggedIn", "true"); 
-        
-        // 2. Update UI state (enable buttons)
-        document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
-            btn.disabled = false;
-            btn.style.opacity = "1";
-            btn.style.cursor = "pointer";
+            if (existing) existing.qty++;
+            else cart.push({ name: itemName, price: itemPrice, qty: 1 });
+
+            alert(itemName + " added to cart!");
+            updateCart();
         });
+    });
 
-        // 3. Finish
-        closeLogin();
-        alert("Login successful! You can now order.");
+    updateCart();
+});
+
+
+// ---------------------------------------------
+// CHECKOUT
+// ---------------------------------------------
+function checkout() {
+    if (!requireLogin()) return;
+
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
     }
+
+    alert("Your order has been submitted!");
+    cart = [];
+    updateCart();
+}
+
+
+// ---------------------------------------------
+// LOGIN MODAL
+// ---------------------------------------------
+function openLogin() {
+    document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLogin() {
+    document.getElementById("loginModal").style.display = "none";
+}
+
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if (user === "" || pass === "") {
+        alert("Please enter both username and password.");
+        return;
+    }
+
+    // Simulated login success
+    localStorage.setItem("loggedIn", "true");
+
+    // Re-enable buttons
+    document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
+        btn.disabled = false;
+        btn.style.opacity = "1";
+        btn.style.cursor = "pointer";
+    });
+
+    closeLogin();
+    alert("Login successful! You can now order.");
+}
+
 </script>
+
 
 </body>
 </html>
