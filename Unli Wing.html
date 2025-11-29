@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -674,7 +675,7 @@
 </head>
 <body>
     <!-- Header -->
-     <header>
+    <header>
         <div class="header-container">
             <div class="logo">🍗 UNLI WINGS 🍗</div>
             <nav>
@@ -683,32 +684,20 @@
                 <a href="#menu">Menu</a>
                 <a href="#promotion">Promo</a>
                 <a href="#contact">Contact</a>
-                <a href="#" onclick="openLogin()">Sign In</a>
-            
-            </nav>
+                          </nav>
         </div>
     </header>
-        <div class="user-actions">
-            <button class="sign-in-btn" onclick="openLogin()">Sign In</button>
-        </div>
-    </div>
-</header>
-   <!-- Hero Section -->
+
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Welcome to Unli Wings</h1>
             <p>Discover our Unli Wings selections, made with premium Chicken and expert care. Every Chicken tells a story of quality and passion.</p>
-           <button class="add-to-cart-btn" data-name="Buffalo Wings">Add to Cart</button>
-
+            <button class="btn" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">
                 View Our Menu
             </button>
         </div>
     </section>
-    
-    <div class="hero-visual">
-        
-    </div>
-</section>
 
     <!-- About Section -->
     <section id="about" style="background: white;">
@@ -725,6 +714,7 @@
                         From our signature Buffalo to bold Korean flavors, each wing is crafted with 
                         precision and care. Join us on a journey through the world of premium wings.
                     </p>
+                    <button class="btn" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">Learn More</button>
                    <button class="btn" onclick="window.location.href='About Us - Wings To Sawa.html'">Learn More</button>
 
                 </div>
@@ -772,250 +762,214 @@
     </section>
 
     <!-- Menu Section -->
-   <section id="menu" class="menu">
-    <div class="menu-container">
-        <h2>Our Menu 🍗</h2>
-        <p class="menu-subtitle">Explore our delicious **unlimited wings** and sides. All menu items are available for dine-in.</p>
+    <section id="menu" class="menu">
+        <div class="menu-container">
+            <h2>Our Menu</h2>
+            <p class="menu-subtitle">Explore our delicious wings and sides</p>
 
-        <div class="menu-categories">
-            <div class="menu-category">
-                <h3>Wing Flavors (Unlimited)</h3>
-                <div class="menu-grid">
-                    
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1631897788978-da06ec45adcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlja2VuJTIwd2luZ3MlMjBidWZmYWxvfGVufDF8fHx8MTc2MzkxNDExOHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Classic Buffalo Wings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Classic Buffalo</h4>
-                            <span class="spice-level" aria-label="Spice level medium-high">🌶️🌶️</span>
-                        </div>
-                        <p class="menu-item-description">Our signature flavor, crispy and spicy.</p>
-                        <span class="menu-item-price">₱399</span> 
-                        <button class="add-to-cart-btn" data-name="Buffalo Wings">Add to Order</button>
-                    </div>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Wings Flavors</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
 
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1592011432621-f7f576f44484?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYnElMjBjaGlja2VuJTIwd2luZ3N8ZW58MXx8fHwxNzYzODg3NjgzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="BBQ Wings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>BBQ</h4>
-                            <span class="spice-level" aria-label="Spice level low">🌶️</span>
-                        </div>
-                        <p class="menu-item-description">Smoky and savory, perfect for a milder taste.</p>
-                        <span class="menu-item-price">₱399</span>
-                        <button class="add-to-cart-btn" data-name="BBQ" data-price="399">Add to Order</button>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1726789991827-93dba0b1d195?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob25leSUyMGdhcmxpYyUyMHdpbmdzfGVufDF8fHx8MTc2MzkxNDExOXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Honey Garlic Wings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Honey Garlic</h4>
-                            <span class="spice-level" aria-label="Spice level low">🌶️</span>
-                        </div>
-                        <p class="menu-item-description">Sweet and tangy, a unique flavor twist.</p>
-                        <span class="menu-item-price">₱399</span>
-                        <button class="add-to-cart-btn" data-name="Honey Garlic" data-price="399">Add to Order</button>
-                    </div>
+                            <img src="https://images.unsplash.com/photo-1631897788978-da06ec45adcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlja2VuJTIwd2luZ3MlMjBidWZmYWxvfGVufDF8fHx8MTc2MzkxNDExOHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Classic Buffalo Wings" class="menu-item-image">
 
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1734987942068-a1a459d65d3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGljeSUyMGNoaWNrZW4lMjB3aW5nc3xlbnwxfHx8fDE3NjM4NDk0NDd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Spicy Korean Wings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Spicy Korean</h4>
-                            <span class="spice-level" aria-label="Spice level high">🌶️🌶️🌶️</span>
-                        </div>
-                        <p class="menu-item-description">Flavorful and spicy, inspired by Korean cuisine.</p>
-                        <span class="menu-item-price">₱399</span>
-                        <button class="add-to-cart-btn" data-name="Spicy Korean" data-price="399">Add to Order</button>
-                    </div>
 
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1631897788978-da06ec45adcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxjaGlja2VuJTIwd2luZ3MlMjBidWZmYWxvfGVufDF8fHx8MTc2MzkxNDExOHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Garlic Parmesan Wings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Garlic Parmesan</h4>
-                            <span class="spice-level" aria-label="Spice level low">🌶️</span>
+                            <div class="menu-item-header">
+                                <h4>Classic Buffalo</h4>
+                                <span class="spice-level">🌶️🌶️</span>
+                            </div>
+                            <p>Our signature flavor, crispy and spicy</p>
+    <button class="add-to-cart-btn" data-name="Classic Buffalo" data-price="299">
+        Add to Order
+</button>
                         </div>
-                        <p class="menu-item-description">Cheesy and garlicky, a delicious twist.</p>
-                        <span class="menu-item-price">₱399</span>
-                        <button class="add-to-cart-btn" data-name="Garlic Parmesan" data-price="399">Add to Order</button>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1592011432621-f7f576f44484?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYnElMjBjaGlja2VuJTIwd2luZ3N8ZW58MXx8fHwxNzYzODg3NjgzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="BBQ Wings" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>BBQ</h4>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <p>Smoky and savory, perfect for a milder taste</p>
+ <button class="add-to-cart-btn" data-name="BBQ" data-price="299">
+        Add to Order
+    </button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1726789991827-93dba0b1d195?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob25leSUyMGdhcmxpYyUyMHdpbmdzfGVufDF8fHx8MTc2MzkxNDExOXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Honey Garlic Wings" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Honey Garlic</h4>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <p>Sweet and tangy, a unique flavor twist</p>
+ <button class="add-to-cart-btn" data-name="Honey Garlic" data-price="299">
+        Add to Order
+    </button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1734987942068-a1a459d65d3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGljeSUyMGNoaWNrZW4lMjB3aW5nc3xlbnwxfHx8fDE3NjM4NDk0NDd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Spicy Korean Wings" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Spicy Korean</h4>
+                                <span class="spice-level">🌶️🌶️🌶️</span>
+                            </div>
+                            <p>Flavorful and spicy, inspired by Korean cuisine</p>
+ <button class="add-to-cart-btn" data-name="Spicy Korean" data-price="299">
+        Add to Order
+    </button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1631897788978-da06ec45adcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlja2VuJTIwd2luZ3MlMjBidWZmYWxvfGVufDF8fHx8MTc2MzkxNDExOHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Garlic Parmesan Wings" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Garlic Parmesan</h4>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <p>Cheesy and garlicky, a delicious twist</p>
+ <button class="add-to-cart-btn" data-name="Garlic Parmesan" data-price="299">
+        Add to Order
+    </button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1592011432621-f7f576f44484?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYnElMjBjaGlja2VuJTIwd2luZ3N8ZW58MXx8fHwxNzYzODg3NjgzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Teriyaki Wings" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Teriyaki</h4>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <p>Sweet and savory, inspired by Japanese cuisine</p>
+ <button class="add-to-cart-btn" data-name="Teriyaki" data-price="299">
+        Add to Order
+    </button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1631897788978-da06ec45adcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlja2VuJTIwd2luZ3MlMjBidWZmYWxvfGVufDF8fHx8MTc2MzkxNDExOHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Buffalo Blue Cheese Wings" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Buffalo Blue Cheese</h4>
+                                <span class="spice-level">🌶️🌶️</span>
+                            </div>
+                            <p>Classic Buffalo with a creamy blue cheese twist</p>
+ <button class="add-to-cart-btn" data-name="Buffalo Blue Cheese" data-price="299">
+        Add to Order
+    </button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1734987942068-a1a459d65d3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGljeSUyMGNoaWNrZW4lMjB3aW5nc3xlbnwxfHx8fDE3NjM4NDk0NDd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Hot & Spicy Wings" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Hot & Spicy</h4>
+                                <span class="spice-level">🌶️🌶️🌶️</span>
+                            </div>
+                            <p>Extra spicy, for the heat lovers</p>
+ <button class="add-to-cart-btn" data-name="Hot & Spicy" data-price="299">
+        Add to Order
+    </button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1631897788978-da06ec45adcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlja2VuJTIwd2luZ3MlMjBidWZmYWxvfGVufDF8fHx8MTc2MzkxNDExOHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Lemon Pepper Wings" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Lemon Pepper</h4>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <p>Zesty and refreshing with a peppery kick</p>
+ <button class="add-to-cart-btn" data-name="Lemon Pepper" data-price="299">
+        Add to Order
+    </button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1726789991827-93dba0b1d195?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob25leSUyMGdhcmxpYyUyMHdpbmdzfGVufDF8fHx8MTc2MzkxNDExOXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Mango Habanero Wings" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Mango Habanero</h4>
+                                <span class="spice-level">🌶️🌶️🌶️</span>
+                            </div>
+                            <p>Sweet tropical mango with fiery habanero heat</p>
+ <button class="add-to-cart-btn" data-name="Mango Habanero" data-price="299">
+        Add to Order
+    </button>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1592011432621-f7f576f44484?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYnElMjBjaGlja2VuJTIwd2luZ3N8ZW58MXx8fHwxNzYzODg3NjgzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Teriyaki Wings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Teriyaki</h4>
-                            <span class="spice-level" aria-label="Spice level low">🌶️</span>
+                <div class="menu-category">
+                    <h3>Sides & Extras</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyaWNlJTIwYm93bHxlbnwxfHx8fDE3NjM5MTQxMjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Unlimited Rice" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Unlimited Rice</h4>
+                            </div>
+                            <p>Steaming hot jasmine rice - unlimited refills</p>
+                             <button class="add-to-cart-btn" data-name="Unlimited Rice" data-price="299">
+        Add to Order
+</button>
                         </div>
-                        <p class="menu-item-description">Sweet and savory, inspired by Japanese cuisine.</p>
-                        <span class="menu-item-price">₱399</span>
-                        <button class="add-to-cart-btn" data-name="Teriyaki" data-price="399">Add to Order</button>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1631897788978-da06ec45adcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxjaGlja2VuJTIwd2luZ3MlMjBidWZmYWxvfGVufDF8fHx8MTc2MzkxNDExOHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Buffalo Blue Cheese Wings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Buffalo Blue Cheese</h4>
-                            <span class="spice-level" aria-label="Spice level medium-high">🌶️🌶️</span>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1630431341973-02e1b662ec35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmVuY2glMjBmcmllc3xlbnwxfHx8fDE3NjM4NDMzMzh8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="French Fries" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>French Fries</h4>
+                            </div>
+                            <p>Crispy golden fries - unlimited with promo</p>
+                             <button class="add-to-cart-btn" data-name="French Fries" data-price="299">
+        Add to Order
+</button>
                         </div>
-                        <p class="menu-item-description">Classic Buffalo with a creamy blue cheese twist.</p>
-                        <span class="menu-item-price">₱399</span>
-                        <button class="add-to-cart-btn" data-name="Buffalo Blue Cheese" data-price="399">Add to Order</button>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1573403707491-38a4ea19edc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xlc2xhdyUyMHNhbGFkfGVufDF8fHx8MTc2MzgzNzUzM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Coleslaw" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Coleslaw</h4>
+                            </div>
+                            <p>Fresh and tangy, a perfect complement</p>
+                             <button class="add-to-cart-btn" data-name="Coleslaw" data-price="299">
+        Add to Order
+</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYXJsaWMlMjBicmVhZHxlbnwxfHx8fDE3NjM5MTQxMjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Garlic Bread" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Garlic Bread</h4>
+                            </div>
+                            <p>Crispy and garlicky, perfect for dipping</p>
+                             <button class="add-to-cart-btn" data-name="Garlic Bread" data-price="299">
+        Add to Order
+</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbmlvbiUyMHJpbmdzfGVufDF8fHx8MTc2MzkxNDEyMHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Onion Rings" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Onion Rings</h4>
+                            </div>
+                            <p>Crispy and savory, a delicious side</p>
+                             <button class="add-to-cart-btn" data-name="Onion Rings" data-price="299">
+        Add to Order
+</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="https://images.unsplash.com/photo-1543923151-e9c0f6e77c1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWMlMjBhbmQlMjBjaGVlc2V8ZW58MXx8fHwxNzYzOTE0MTIxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Mac & Cheese" class="menu-item-image">
+                            <div class="menu-item-header">
+                                <h4>Mac & Cheese</h4>
+                            </div>
+                            <p>Cheesy and creamy, a comforting side</p>
+                             <button class="add-to-cart-btn" data-name="Mac & Cheese" data-price="299">
+        Add to Order
+</button>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1734987942068-a1a459d65d3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGljeSUyMGNoaWNrZW4lMjB3aW5nc3xlbnwxfHx8fDE3NjM4NDk0NDd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Hot & Spicy Wings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Hot & Spicy</h4>
-                            <span class="spice-level" aria-label="Spice level high">🌶️🌶️🌶️</span>
+                <div class="menu-category">
+                    <h3>Beverages</h3>
+                    <div class="menu-extras">
+                        <h4>Drinks Available</h4>
+                        <div class="extras-list">
+                            <div class="extra-item">Iced Tea</div>
+                            <div class="extra-item">Lemonade</div>
+                            <div class="extra-item">Soda</div>
+                            <div class="extra-item">Bottled Water</div>
+                            <div class="extra-item">Fresh Juice</div>
+                            <div class="extra-item">Milkshakes</div>
                         </div>
-                        <p class="menu-item-description">Extra spicy, for the heat lovers.</p>
-                        <span class="menu-item-price">₱399</span>
-                        <button class="add-to-cart-btn" data-name="Hot & Spicy" data-price="399">Add to Order</button>
                     </div>
-
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1631897788978-da06ec45adcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxjaGlja2VuJTIwd2luZ3MlMjBidWZmYWxvfGVufDF8fHx8MTc2MzkxNDExOHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Lemon Pepper Wings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Lemon Pepper</h4>
-                            <span class="spice-level" aria-label="Spice level low">🌶️</span>
-                        </div>
-                        <p class="menu-item-description">Zesty and refreshing with a peppery kick.</p>
-                        <span class="menu-item-price">₱399</span>
-                        <button class="add-to-cart-btn" data-name="Lemon Pepper" data-price="399">Add to Order</button>
-                    </div>
-
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1726789991827-93dba0b1d195?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxob25leSUyMGdhcmxpYyUyMHdpbmdzfGVufDF8fHx8MTc2MzkxNDExOXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Mango Habanero Wings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Mango Habanero</h4>
-                            <span class="spice-level" aria-label="Spice level high">🌶️🌶️🌶️</span>
-                        </div>
-                        <p class="menu-item-description">Sweet tropical mango with fiery habanero heat.</p>
-                        <span class="menu-item-price">₱399</span>
-                        <button class="add-to-cart-btn" data-name="Mango Habanero" data-price="399">Add to Order</button>
-                    </div>
-
                 </div>
             </div>
-
-            <hr>
-            
-            <div class="menu-category">
-                <h3>Sides & Extras</h3>
-                <div class="menu-grid">
-                    
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyaWNlJTIwYm93bHxlbnwxfHx8fDE3NjM5MTQxMjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Unlimited Rice" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Unlimited Rice</h4>
-                        </div>
-                        <p class="menu-item-description">Steaming hot jasmine rice - unlimited refills.</p>
-                        <span class="menu-item-price">₱40</span>
-                        <button class="add-to-cart-btn" data-name="Unlimited Rice" data-price="40">Add to Order</button>
-                    </div>
-
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1630431341973-02e1b662ec35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmVuY2glMjBmcmllc3xlbnwxfHx8fDE3NjM4NDMzMzh8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="French Fries" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>French Fries</h4>
-                        </div>
-                        <p class="menu-item-description">Crispy golden fries - unlimited with promo.</p>
-                        <span class="menu-item-price">₱60</span>
-                        <button class="add-to-cart-btn" data-name="French Fries" data-price="60">Add to Order</button>
-                    </div>
-
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1573403707491-38a4ea19edc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJiJTIwc2FsYWR8ZW58MXx8fHwxNzYzODM3NTMzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Coleslaw" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Coleslaw</h4>
-                        </div>
-                        <p class="menu-item-description">Fresh and tangy, a perfect complement.</p>
-                        <span class="menu-item-price">₱50</span>
-                        <button class="add-to-cart-btn" data-name="Coleslaw" data-price="50">Add to Order</button>
-                    </div>
-
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYXJsaWMlMjBicmVhZHxlbnwxfHx8fDE3NjM5MTQxMjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Garlic Bread" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Garlic Bread</h4>
-                        </div>
-                        <p class="menu-item-description">Crispy and garlicky, perfect for dipping.</p>
-                        <span class="menu-item-price">₱70</span>
-                        <button class="add-to-cart-btn" data-name="Garlic Bread" data-price="70">Add to Order</button>
-                    </div>
-
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbmlvbiUyMHJpbmdzfGVufDF8fHx8MTc2MzkxNDEyMHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Onion Rings" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Onion Rings</h4>
-                        </div>
-                        <p class="menu-item-description">Crispy and savory, a delicious side.</p>
-                        <span class="menu-item-price">₱80</span>
-                        <button class="add-to-cart-btn" data-name="Onion Rings" data-price="80">Add to Order</button>
-                    </div>
-
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1543923151-e9c0f6e77c1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWMlMjBhbmQlMjBjaGVlc2V8ZW58MXx8fHwxNzYzOTE0MTIxfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Mac & Cheese" class="menu-item-image">
-                        <div class="menu-item-header">
-                            <h4>Mac & Cheese</h4>
-                        </div>
-                        <p class="menu-item-description">Cheesy and creamy, a comforting side.</p>
-                        <span class="menu-item-price">₱100</span>
-                        <button class="add-to-cart-btn" data-name="Mac & Cheese" data-price="100">Add to Order</button>
-                    </div>
-
-                </div>
-            </div>
-
-            <hr>
-            
-            <div class="menu-category">
-                <h3>Beverages</h3>
-                <div class="menu-grid menu-beverage-grid">
-                    
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Iced Tea</h4>
-                        </div>
-                        <span class="menu-item-price">₱50</span>
-                        <button class="add-to-cart-btn" data-name="Iced Tea" data-price="50">Add to Order</button>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Lemonade</h4>
-                        </div>
-                        <span class="menu-item-price">₱50</span>
-                        <button class="add-to-cart-btn" data-name="Lemonade" data-price="50">Add to Order</button>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Soda</h4>
-                        </div>
-                        <span class="menu-item-price">₱60</span>
-                        <button class="add-to-cart-btn" data-name="Soda" data-price="60">Add to Order</button>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Bottled Water</h4>
-                        </div>
-                        <span class="menu-item-price">₱30</span>
-                        <button class="add-to-cart-btn" data-name="Bottled Water" data-price="30">Add to Order</button>
-                    </div>
-
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Milkshakes</h4>
-                        </div>
-                        <span class="menu-item-price">₱120</span>
-                        <button class="add-to-cart-btn" data-name="Milkshakes" data-price="120">Add to Order</button>
-                    </div>
-                    
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Promotion Section -->
     <section id="promotion" class="promotion">
@@ -1099,9 +1053,118 @@
         </div>
     </footer>
 
- 
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your reservation request! We will contact you shortly to confirm your table.');
+            event.target.reset();
+        }
 
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+let cart = [];
+
+function toggleCart() {
+    document.getElementById("cartPanel").classList.toggle("open");
+}
+
+document.querySelectorAll(".add-to-cart-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        const name = button.dataset.name;
+        const price = parseFloat(button.dataset.price);
+
+        const item = cart.find(i => i.name === name);
+
+        if (item) item.qty++;
+        else cart.push({ name, price, qty: 1 });
+
+        updateCart();
+    });
+});
+
+function updateCart() {
+    const cartItemsDiv = document.getElementById("cartItems");
+    const cartCount = document.querySelector(".cart-count");
+    const cartTotal = document.getElementById("cartTotal");
+
+    cartItemsDiv.innerHTML = "";
+    let total = 0;
+    let count = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price * item.qty;
+        count += item.qty;
+
+        cartItemsDiv.innerHTML += `
+            <div class="cart-item">
+                <div class="cart-item-title">${item.name}</div>
+                <div class="cart-item-controls">
+                    <button class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+                    <span>${item.qty}</span>
+                    <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+                    <span class="remove-btn" onclick="removeItem(${index})">🗑️</span>
+                </div>
+            </div>
+        `;
+    });
+
+    cartCount.textContent = count;
+    cartTotal.textContent = total.toFixed(2);
+}
+
+function changeQty(index, num) {
+    cart[index].qty += num;
+    if (cart[index].qty <= 0) cart.splice(index, 1);
+    updateCart();
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function checkout() {
+    alert("Your order has been submitted! Thank you!");
+    cart = [];
+    updateCart();
+    toggleCart();
+}
+
+    </script>
 <div class="floating-cart" onclick="toggleCart()">
     🛒 Order <span class="cart-count">0</span>
 </div>
@@ -1114,157 +1177,6 @@
 
     <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
 </div>
-<!-- LOGIN MODAL -->
-<div id="loginModal" style="
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7); display: none; justify-content: center;
-    align-items: center; z-index: 5000;">
-    
-    <div style="background: white; padding: 30px; border-radius: 10px; width: 300px;">
-        <h2 style="text-align:center; margin-bottom:15px;">Sign In</h2>
-
-        <input id="username" type="text" placeholder="Username" 
-               style="width:100%; padding:10px; margin-bottom:10px;">
-
-        <input id="password" type="password" placeholder="Password" 
-               style="width:100%; padding:10px; margin-bottom:20px;">
-
-        <button onclick="login()" style="
-            width:100%; padding:10px; background:#FF6B35; 
-            color:white; border:none; border-radius:5px; cursor:pointer;">
-            Login
-        </button>
-
-        <button onclick="closeLogin()" style="
-            width:100%; padding:10px; margin-top:10px; background:#bbb;
-            border:none; border-radius:5px; cursor:pointer;">
-            Cancel
-        </button>
-    </div>
-</div>
-
-
-<script>
-
-let cart = [];
-
-// ---------------------------------------------
-// LOGIN CHECK (NO REDIRECT — MODAL ONLY)
-// ---------------------------------------------
-function requireLogin() {
-    const loggedIn = localStorage.getItem("loggedIn");
-
-    if (loggedIn !== "true") {
-        openLogin();
-        return false;
-    }
-    return true;
-}
-
-// ---------------------------------------------
-// UPDATE CART COUNT
-// ---------------------------------------------
-function updateCart() {
-    const cartCount = document.querySelector(".cart-count");
-    if (!cartCount) return;
-
-    cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-}
-
-
-// ---------------------------------------------
-// PAGE LOAD
-// ---------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-    const loggedIn = localStorage.getItem("loggedIn") === "true";
-    const buttons = document.querySelectorAll(".add-to-cart-btn");
-
-    // Disable buttons if not logged in
-    if (!loggedIn) {
-        buttons.forEach(btn => {
-            btn.disabled = true;
-            btn.style.opacity = "0.5";
-            btn.style.cursor = "not-allowed";
-
-            btn.addEventListener("click", () => openLogin());
-        });
-    }
-
-    // Add-to-cart logic (works only if logged in)
-    buttons.forEach(btn => {
-        btn.addEventListener("click", function () {
-            if (!requireLogin()) return;
-
-            const itemName = this.dataset.name;
-            const itemPrice = parseFloat(this.dataset.price) || 0;
-
-            const existing = cart.find(item => item.name === itemName);
-
-            if (existing) existing.qty++;
-            else cart.push({ name: itemName, price: itemPrice, qty: 1 });
-
-            alert(itemName + " added to cart!");
-            updateCart();
-        });
-    });
-
-    updateCart();
-});
-
-
-// ---------------------------------------------
-// CHECKOUT
-// ---------------------------------------------
-function checkout() {
-    if (!requireLogin()) return;
-
-    if (cart.length === 0) {
-        alert("Your cart is empty!");
-        return;
-    }
-
-    alert("Your order has been submitted!");
-    cart = [];
-    updateCart();
-}
-
-
-// ---------------------------------------------
-// LOGIN MODAL
-// ---------------------------------------------
-function openLogin() {
-    document.getElementById("loginModal").style.display = "flex";
-}
-
-function closeLogin() {
-    document.getElementById("loginModal").style.display = "none";
-}
-
-function login() {
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-
-    if (user === "" || pass === "") {
-        alert("Please enter both username and password.");
-        return;
-    }
-
-    // Simulated login success
-    localStorage.setItem("loggedIn", "true");
-
-    // Re-enable buttons
-    document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
-        btn.disabled = false;
-        btn.style.opacity = "1";
-        btn.style.cursor = "pointer";
-    });
-
-    closeLogin();
-    alert("Login successful! You can now order.");
-}
-
-</script>
-
 
 </body>
 </html>
