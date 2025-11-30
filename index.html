@@ -666,6 +666,85 @@
     }
 }
 
+
+
+ /* About Section */
+ .container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 80px 2rem;
+ }
+
+ .section-title {
+     font-size: 2.5rem;
+     margin-bottom: 1rem;
+     color: #333;
+     text-align: center;
+ }
+
+ .section-description {
+     text-align: center;
+     font-size: 1.2rem;
+     color: #666;
+     margin-bottom: 3rem;
+     max-width: 700px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .about-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 3rem;
+     align-items: center;
+ }
+
+ .about-image {
+     width: 100%;
+     height: auto;
+     border-radius: 15px;
+     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+ }
+
+ .contact-section {
+     background: #f8f8f8;
+     padding: 80px 2rem;
+ }
+
+ .contact-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 2rem;
+     max-width: 1200px;
+     margin: 0 auto;
+     text-align: left;
+ }
+
+ .contact-grid h3 {
+     color: #FF6B35;
+ }
+
+ .contact-grid p {
+     color: #666;
+     margin-bottom: 0.5rem;
+ }
+
+  .btn {
+     display: inline-block;
+     background: #FF6B35;
+     color: white;
+     padding: 1rem 2rem;
+     border: none;
+     border-radius: 50px;
+     cursor: pointer;
+     transition: all 0.3s;
+ }
+
+ .btn:hover {
+     background: #F7931E;
+     transform: translateY(-3px);
+     box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+ }
     </style>
 </head>
 <body>
@@ -673,7 +752,7 @@
     <!-- Navigation -->
     <nav class="navbar hidden" id="navbar">
         <div class="container">
-            <div class="logo">🍗 WINGS UNLIMITED</div>
+            <div class="logo">🍗 WINGS TO SAWA</div>
             <div class="nav-links">
                 <button onclick="showPage('home')">Home</button>
                 <button onclick="showPage('menu')">Menu</button>
@@ -688,7 +767,7 @@
     <div id="homePage">
         <div class="hero">
             <div>
-                <h1>WINGS <span class="highlight">UNLIMITED</span></h1>
+                <h1>WINGS <span class="highlight">TO SAWA</span></h1>
                 <p>Eat all you can wings! Premium quality, unlimited happiness</p>
                 <div class="promo-badge">🔥 UNLI WINGS PROMO NOW AVAILABLE! 🔥</div>
                 <br>
@@ -727,7 +806,29 @@
                 </div>
             </div>
         </div>
+<!-- About Section -->
+ <section id="about" style="background: white;">
+     <div class="container">
+         <div class="about-grid">
+             <div>
+                 <h2 class="section-title" style="text-align: left;">Crafted with Passion</h2>
+                 <p style="margin-bottom: 1rem; color: #6b7280;">
+                     At Unli Wings, we believe that great Wings starts with great Staff. 
+                     Our Wing experts carefully select and cook each batch to perfection, 
+                     ensuring every Wing delivers an exceptional experience.
+                 </p>
+                 <p style="margin-bottom: 1.5rem; color: #6b7280;">
+                     From our signature Buffalo to bold Korean flavors, each wing is crafted with 
+                     precision and care. Join us on a journey through the world of premium wings.
+                 </p>
+                <button class="btn" onclick="window.location.href='About Us - Wings To Sawa.html'">Learn More</button>
 
+             </div>
+             <img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlja2VuJTIwd2luZ3N8ZW58MHx8fHwxNzYyNDQ0NzM2fDA&ixlib=rb-4.1.0&q=80&w=1080" 
+                  alt="Delicious chicken wings" class="about-image">
+         </div>
+     </div>
+ </section>
         <div class="menu-section">
             <div class="container">
                 <h2 class="section-title">🏆 OUR BEST SELLERS</h2>
@@ -767,6 +868,10 @@
             </div>
         </div>
     </div>
+
+ 
+
+
 
     <!-- AUTH PAGE -->
     <div id="authPage" class="auth-section hidden">
