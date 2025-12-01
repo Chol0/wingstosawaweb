@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@ body {
     color: #333;
 }
 
-/* This is the HEADER */
+/* HEADER */
 header {
     background: linear-gradient(to right, #ea580c, #dc2626);
     padding: 1rem 1.5rem;
@@ -105,7 +106,7 @@ header nav a:hover {
     margin: 1.3rem 0;
 }
 
-/* This is the GALLERY */
+/* GALLERY */
 .gallery-title {
     font-size: 24px;
     color: #dc2626;
@@ -139,6 +140,41 @@ footer {
     padding: 1.5rem;
     margin-top: 40px;
 }
+
+/* LOADING SCREEN STYLES */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff7e6; /* Matches body background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.spinner {
+    border: 4px solid #ccc;
+    border-top: 4px solid #ea580c; /* Matches theme color */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide main content initially */
+#main-content {
+    display: none;
+}
+
 /* FIX NAVBAR MOBILE BROKEN LAYOUT */
 @media (max-width: 768px) {
 
@@ -182,6 +218,17 @@ footer {
 </head>
 
 <body>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+    <div>
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+</div>
+
+<!-- Main Content (wrapped and hidden initially) -->
+<div id="main-content">
 
 <header>
     <div class="logo">🍗 Wings To Sawa</div>
@@ -251,6 +298,21 @@ footer {
 <footer>
     <p>© 2025 Wings To Sawa — Crafted with Passion.</p>
 </footer>
+
+</div> <!-- End of main-content -->
+
+<script>
+// Function to hide the loading screen
+function hideLoadingScreen() {
+    document.getElementById('loading-screen').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+}
+
+// Hide after page load (adjust delay if needed for real loading)
+window.addEventListener('load', function() {
+    setTimeout(hideLoadingScreen, 1500); // 1.5 seconds delay for demo; change to 0 for instant or based on actual load
+});
+</script>
 
 </body>
 </html>
