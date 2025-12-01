@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
     background: #fff7e6;
     color: #333;
 }
@@ -21,115 +21,114 @@ body {
 /* HEADER */
 header {
     background: linear-gradient(to right, #ea580c, #dc2626);
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header .logo {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: bold;
 }
 
 header nav a {
     color: white;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 8px 16px;
     text-decoration: none;
     background: rgba(255,255,255,0.15);
-    border-radius: 25px;
+    border-radius: 20px;
     transition: 0.3s;
 }
 
 header nav a:hover {
     background: rgba(255,255,255,0.25);
-    transform: scale(1.05);
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=1200')
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=900')
         center/cover;
     color: white;
     text-align: center;
-    padding: 120px 20px;
+    padding: 90px 20px;
 }
 
 .hero h1 {
-    font-size: 50px;
+    font-size: 38px;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
 .hero p {
-    font-size: 20px;
+    font-size: 18px;
     color: #fbbf24;
 }
 
-/* CONTENT SECTIONS */
+/* CONTENT */
 .container {
-    max-width: 1200px;
-    margin: 40px auto;
+    max-width: 1100px;
+    margin: auto;
     padding: 20px;
 }
 
 .section {
     background: white;
-    padding: 2rem;
+    padding: 1.7rem;
     border-radius: 20px;
-    margin-bottom: 2rem;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    animation: fadeIn 0.7s ease;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-.section h2, .section h1 {
+.section h1, .section h2 {
     color: #ea580c;
     margin-bottom: 1rem;
+    font-size: 26px;
 }
 
 .section p {
-    line-height: 1.7;
-    font-size: 1.15rem;
-    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.05rem;
 }
 
 /* INFO BOX */
 .info-box {
     background: #fff0cc;
-    padding: 1.5rem;
+    padding: 1.3rem;
     border-left: 8px solid #ea580c;
     border-radius: 12px;
-    margin: 1.5rem 0;
+    margin: 1.3rem 0;
 }
 
 /* GALLERY */
 .gallery-title {
-    font-size: 28px;
+    font-size: 24px;
     color: #dc2626;
     margin-bottom: 1rem;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
 }
 
 .gallery-grid img {
     width: 100%;
-    height: 200px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    transition: 0.3s ease;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s;
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* FOOTER */
@@ -138,26 +137,61 @@ footer {
     color: #fef3c7;
     text-align: center;
     padding: 1.5rem;
-    margin-top: 3rem;
+    margin-top: 40px;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* MOBILE RESPONSIVE */
+/* MOBILE OPTIMIZATION */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 34px; }
-    .hero p { font-size: 16px; }
 
+    header {
+        padding: 0.8rem 1rem;
+    }
+    header .logo {
+        font-size: 18px;
+    }
     header nav a {
-        padding: 8px 15px;
-        font-size: 14px;
+        padding: 6px 12px;
+        font-size: 13px;
     }
 
-    .section p { font-size: 1rem; }
+    .hero {
+        padding: 70px 20px;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 1.3rem;
+    }
+    .section h1, .section h2 {
+        font-size: 22px;
+    }
+    .section p {
+        font-size: 1rem;
+    }
+
+    .gallery-grid img {
+        height: 140px;
+    }
+}
+
+/* EXTRA SMALL MOBILE (IPHONE SE, 320px) */
+@media (max-width: 430px) {
+    .hero h1 { font-size: 26px; }
+    .hero p { font-size: 14px; }
+
+    header nav a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 </style>
 </head>
@@ -166,9 +200,7 @@ footer {
 
 <header>
     <div class="logo">🍗 Wings To Sawa</div>
-    <nav>
-        <a href="index.html">← Back Home</a>
-    </nav>
+    <nav><a href="index.html">← Home</a></nav>
 </header>
 
 <div class="hero">
@@ -178,45 +210,40 @@ footer {
 
 <div class="container">
 
-    <!-- ABOUT SECTION -->
     <div class="section">
         <h1>About Us</h1>
         <p>
             Wings To Sawa was built with one mission—serve the best, most flavorful wings at
-            a sulit price you can't resist. Located in the heart of Binangonan, Rizal, we’ve become a go-to spot
-            for families, friends, and barkadas looking for unforgettable food moments.
+            a sulit price you can't resist. We are a home for barkada, families, and everyone craving premium wings.
         </p>
 
         <div class="info-box">
             <h2>Our Promise</h2>
             <p>
-                ✔ Fresh and flavorful wings daily<br>
-                ✔ Affordable UNLI pricing at ₱315 per head<br>
-                ✔ Clean and comfortable dining experience<br>
-                ✔ Fast, friendly staff ready to serve<br>
-                ✔ Diverse flavors from sweet to spicy<br>
+                ✔ Fresh wings daily<br>
+                ✔ Clean & cozy dining<br>
+                ✔ UNLI wings at ₱315<br>
+                ✔ Friendly fast service<br>
+                ✔ Many flavor choices<br>
             </p>
         </div>
 
         <p>
-            Every plate of wings we serve is prepared with care—perfect for bonding, celebrations, and casual hangouts.
-            At Wings To Sawa, great food means great memories.
+            Every visit is made special—from sizzling wings to shared memories.
         </p>
     </div>
 
-    <!-- MISSION & VISION -->
     <div class="section">
         <h2>Our Mission</h2>
-        <p>To serve high-quality wings at affordable prices and create a warm, welcoming place where everyone feels at home.</p>
+        <p>Serve high-quality wings with affordability and warmth.</p>
 
         <h2>Our Vision</h2>
-        <p>To be one of Rizal’s top dining destinations—known for flavor, value, and a fun, memorable experience.</p>
+        <p>Become Rizal’s most loved wing destination.</p>
     </div>
 
-    <!-- GALLERY -->
     <div class="section">
         <h2 class="gallery-title">Store Gallery</h2>
-        <p>Take a look inside Wings To Sawa — a warm, inviting place made for food and fun!</p>
+        <p>Here’s a quick look at Wings To Sawa!</p>
 
         <div class="gallery-grid">
             <img src="1.png">
