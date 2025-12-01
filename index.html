@@ -131,7 +131,29 @@
     font-weight: bold;
     margin-left: 5px;
 }
+@media (max-width: 768px) {
 
+    .navbar .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .nav-links button {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+}
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600555379765-f82335a7b1b0?w=1200') center/cover;
